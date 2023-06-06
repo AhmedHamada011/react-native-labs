@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, SafeAreaView, FlatList } from "react-native";
+import styles from "./styles";
+import { NavigationContainer } from "@react-navigation/native";
+import Root from "./navigations/root";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import routes from "./common/routes";
+import Contact from "./screens/contacts";
+import Users from "./screens/users";
 
 export default function App() {
+  const Tab = createMaterialTopTabNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Root></Root>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
